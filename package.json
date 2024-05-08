@@ -1,0 +1,59 @@
+{
+    "name": "@dreamit/funpara",
+    "version": "0.1.0",
+    "description": "Function parameter library for coding and testing",
+    "scripts": {
+        "build": "tsup-node",
+        "check": "tsc --noEmit --pretty",
+        "checkformat": "prettier --check .",
+        "format": "prettier --cache --write .",
+        "lint": "eslint src/*.ts tests/*.ts",
+        "lintfix": "eslint --fix src/*.ts tests/*.ts",
+        "prepack": "npm run build",
+        "test": "vitest run --coverage"
+    },
+    "type": "module",
+    "main": "build/index.cjs",
+    "module": "build/index.js",
+    "types": "build/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./build/index.d.ts",
+            "import": "./build/index.js",
+            "require": "./build/index.cjs",
+            "default": "./build/index.js"
+        },
+        "./package.json": "./package.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dreamit-de/funpara.git"
+    },
+    "keywords": [
+        "OpenTelemetry",
+        "JSON",
+        "logging",
+        "Logger"
+    ],
+    "author": "Stefan Gohlke",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/dreamit-de/funpara/issues"
+    },
+    "homepage": "https://github.com/dreamit-de/funpara#readme",
+    "devDependencies": {
+        "@types/node": "20.11.5",
+        "@vitest/coverage-v8": "1.6.0",
+        "eslint-plugin-deprecation": "2.0.0",
+        "eslint-plugin-import": "2.29.1",
+        "eslint-plugin-security": "3.0.0",
+        "eslint-plugin-unicorn": "52.0.0",
+        "prettier": "3.2.5",
+        "prettier-plugin-organize-imports": "3.2.4",
+        "tsup": "8.0.2",
+        "typescript": "5.4.5",
+        "typescript-eslint": "7.8.0",
+        "vite-tsconfig-paths": "4.3.2",
+        "vitest": "1.6.0"
+    }
+}

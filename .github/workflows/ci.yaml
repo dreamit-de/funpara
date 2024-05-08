@@ -1,0 +1,6 @@
+name: Install and test graphql-prom-metrics
+on: [push, workflow_dispatch]
+
+jobs:
+  funpara:
+    uses: dreamit-de/workflows/.github/workflows/nodejs-ci-libs.yml@main
