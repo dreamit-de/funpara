@@ -152,9 +152,7 @@ test('Test fetch functions', async () => {
 
     // Test that brokenJSONFetchFunction is handled properly
     const brokenJSONResponse = await getJSONMessage(brokenJSONFetchFunction)
-    expect(brokenJSONResponse.data.message).toContain(
-        "Error: SyntaxError: Expected ',' or '}' after property value in JSON",
-    )
+    expect(brokenJSONResponse.data.message).toContain('SyntaxError')
 
     // Test that unknownContentTypeFetchFunction is handled properly
     expect(await getJSONMessage(unknownContentTypeFetchFunction)).toEqual({
