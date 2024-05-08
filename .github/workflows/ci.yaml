@@ -1,4 +1,4 @@
-name: Install and test graphql-prom-metrics
+name: Install and test funpara
 on: [push, workflow_dispatch]
 
 jobs:
