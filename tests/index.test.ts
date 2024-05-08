@@ -1,7 +1,4 @@
-import type {
-    DateFunction,
-    FetchFunction,
-} from '@/index'
+import type { DateFunction, FetchFunction } from '@/index'
 import {
     brokenJSONFetchFunction,
     fixedDateFunction,
@@ -17,24 +14,23 @@ import { expect, test } from 'vitest'
 
 /**
  * Example Logger class to test the date functions.
- * The DateFunction is passed as an optional function parameter to the log 
+ * The DateFunction is passed as an optional function parameter to the log
  * and prepareLogMessage functions in order to be able to set a custom DateFunction if necessary.
- */ 
+ */
 class Logger {
-
     /**
      * Setting the default value to nowDateFunction will make it
      * easier to call the function without the caller providing a DateFunction argument
-     */  
+     */
     log(message: string, dateFunction: DateFunction = nowDateFunction()): void {
         console.log(this.prepareLogMessage(message, dateFunction))
     }
 
     /**
      * prepareLogMessage prepares the log message and returns it as a string.
-     * This will make it easier to test the output without having to spy on 
+     * This will make it easier to test the output without having to spy on
      * the console.log function.
-     */ 
+     */
     prepareLogMessage(
         message: string,
         dateFunction: DateFunction = nowDateFunction(),
@@ -49,7 +45,7 @@ class Logger {
  * By providing an optional function parameter fetchFunction that is set to global.fetch this
  * would try to fetch the user data from a server. In tests this function can be set to test
  * different scenarios like a successful fetch, a "not found" response or a timeout response.
- */ 
+ */
 async function getUserById(
     id: string,
     fetchFunction: FetchFunction = global.fetch,
@@ -70,7 +66,7 @@ async function getUserById(
 /**
  * Second example async function to test the fetch functions (see above)
  * This function tries to work with JSON data so these scenarios can be tested.
- */ 
+ */
 async function getJSONMessage(
     fetchFunction: FetchFunction = global.fetch,
 ): Promise<{ data: { message: string } }> {
@@ -113,7 +109,7 @@ test('Test date functions', () => {
     // Test that the testDateFunction returns the test date
     expect(
         logger.prepareLogMessage('I am a log message!', testDateFunction),
-    ).toBe( `${testDateString} : I am a log message!`)
+    ).toBe(`${testDateString} : I am a log message!`)
 
     // Test that calling prepareLogMessage without a dateFunction argument does not run into an error
     expect(logger.prepareLogMessage('I am a log message!')).toContain(
@@ -130,7 +126,7 @@ test('Test fetch functions', async () => {
         ),
     ).toBe('User John Doe')
 
-     // Test that notFoundFetchFunction is handled properly
+    // Test that notFoundFetchFunction is handled properly
     expect(await getUserById('1', notFoundFetchFunction)).toBe(
         'User was not found',
     )

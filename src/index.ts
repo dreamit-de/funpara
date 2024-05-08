@@ -74,7 +74,7 @@ export const notFoundFetchFunction: FetchFunction = fixedResponseFetchFunction(
 )
 
 /**
- * FetchFunction that returns a fixed Response with  broken JSON (missing bracket) 
+ * FetchFunction that returns a fixed Response with  broken JSON (missing bracket)
  */
 export const brokenJSONFetchFunction: FetchFunction =
     fixedResponseFetchFunction('{"data": {"message": "Missing bracket"}', {
@@ -83,8 +83,8 @@ export const brokenJSONFetchFunction: FetchFunction =
     })
 
 /**
- * FetchFunction that returns a fixed Response with an unknown 
- * Content-Type ('application/unknown') 
+ * FetchFunction that returns a fixed Response with an unknown
+ * Content-Type ('application/unknown')
  */
 export const unknownContentTypeFetchFunction: FetchFunction =
     fixedResponseFetchFunction(undefined, {
@@ -93,7 +93,7 @@ export const unknownContentTypeFetchFunction: FetchFunction =
     })
 
 /**
- * FetchFunction that returns a fixed Response that throws a Timeout error. 
+ * FetchFunction that returns a fixed Response that throws a Timeout error.
  */
 export const timeoutFetchFunction: FetchFunction = (): Promise<Response> =>
     new Promise<Response>(() => {

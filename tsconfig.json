@@ -14,7 +14,7 @@
         "paths": {
             "@/*": ["src/*"],
             "~/*": ["./*"]
-        },
+        }
     },
     "include": ["tsup.config.ts", "vitest.config.js", "src/*", "tests/*"],
     "exclude": ["node_modules"]
