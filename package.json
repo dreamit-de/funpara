@@ -1,6 +1,6 @@
 {
     "name": "@dreamit/funpara",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Function parameter library for coding and testing",
     "scripts": {
         "build": "tsup-node",
