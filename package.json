@@ -42,7 +42,7 @@
     },
     "homepage": "https://github.com/dreamit-de/funpara#readme",
     "devDependencies": {
-        "@types/node": "20.14.10",
+        "@types/node": "20.14.11",
         "@vitest/coverage-v8": "2.0.3",
         "eslint-plugin-deprecation": "3.0.0",
         "eslint-plugin-import": "2.29.1",
@@ -50,7 +50,7 @@
         "eslint-plugin-unicorn": "54.0.0",
         "prettier": "3.3.3",
         "prettier-plugin-organize-imports": "4.0.0",
-        "tsup": "8.1.0",
+        "tsup": "8.1.1",
         "typescript": "5.5.3",
         "typescript-eslint": "7.16.1",
         "vite-tsconfig-paths": "4.3.2",
