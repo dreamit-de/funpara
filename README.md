@@ -61,6 +61,7 @@ In **tests/index.test.ts** there are additional examples how the available code 
 ### Types
 
 -   **DateFunction**: Type for a function that returns a Date.
+-   **ExitFunction**: Type for a function that given an exit does not return anything.
 -   **FetchFunction**: Type for a fetch function that given an input (url, request, etc.) and request init returns a Promise<Response>
 
 ### Core functions
@@ -69,6 +70,7 @@ The following core functions can be used to create a new function or create dyna
 
 -   **nowDateFunction**: Returns a DateFunction that returns the current date.
 -   **fixedDateFunction**: Returns a DateFunction that returns a fixed date that matches the given date string.
+-   **doNotExitFunction**: Exit function that does not exit the process but throws an error instead.
 -   **fixedResponseFetchFunction**: Returns a FetchFunction that always returns a fixed response that matches the given body init and response init values.
 
 ### Fixed value functions

@@ -1,6 +1,7 @@
 import type { DateFunction, FetchFunction } from '@/index'
 import {
     brokenJSONFetchFunction,
+    doNotExitFunction,
     fixedDateFunction,
     fixedResponseFetchFunction,
     notFoundFetchFunction,
@@ -158,4 +159,11 @@ test('Test fetch functions', async () => {
     expect(await getJSONMessage(unknownContentTypeFetchFunction)).toEqual({
         data: { message: 'Error: Content-Type is not application/json' },
     })
+})
+
+test('Test exit functions', () => {
+    // Test that doNotExitFunction does not exit and returns the correct error message
+    expect(() => doNotExitFunction(1)).toThrow(
+        'Exit function was called with code 1',
+    )
 })

@@ -99,3 +99,23 @@ export const timeoutFetchFunction: FetchFunction = (): Promise<Response> =>
     new Promise<Response>(() => {
         throw new Error('Connection failed ETIMEDOUT')
     })
+
+// Exit function related types and functions
+
+/**
+ * Type for a function that given an exit does not return anything.
+ * @param {number} code The exit code to use
+ * @returns {never} Does not return anything, may e.g. exit the process or throw an error
+ */
+export type ExitFunction = (code: number) => never
+
+/**
+ * Exit function that does not exit the process but throws an error instead
+ * Can be used in testing to avoid the tests exiting the application.
+ * @param {number} code The exit code to be thrown in the error
+ * @returns {never} Does not return anything but throws an error with the message
+ * "Exit function was called with code CODE" where CODE is the given code.
+ */
+export const doNotExitFunction: ExitFunction = (code: number): never => {
+    throw new Error(`Exit function was called with code ${code}`)
+}
