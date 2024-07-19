@@ -61,7 +61,7 @@ In **tests/index.test.ts** there are additional examples how the available code 
 ### Types
 
 -   **DateFunction**: Type for a function that returns a Date.
--   **ExitFunction**: Type for a function that given an exit does not return anything.
+-   **ExitFunction**: Type for a function that given an exit code does not return anything.
 -   **FetchFunction**: Type for a fetch function that given an input (url, request, etc.) and request init returns a Promise<Response>
 
 ### Core functions
