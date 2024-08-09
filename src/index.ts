@@ -119,3 +119,26 @@ export type ExitFunction = (code: number) => never
 export const doNotExitFunction: ExitFunction = (code: number): never => {
     throw new Error(`Exit function was called with code ${code}`)
 }
+
+// Timeout function related types and functions
+
+/**
+ * Type for a function that given a TimerHandler, optional timeout and arguments returns the timeout ID as number.
+ * @param {TimerHandler} handler The TimerHandler to be called (i.e. in most cases a callback function)
+ * @param {number} timeout The timeout in milliseconds
+ * @param {any[]} timeoutArguments The arguments to be passed to the handler
+ * @returns {number} The timeout ID as number
+ */
+export type TimeoutFunction = (
+    handler: TimerHandler,
+    timeout?: number,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ...timeoutArguments: any[]
+) => number
+
+/**
+ * TimeoutFunction that does not call the callback function but returns a fixed timeout ID 1.
+ * Can be used in testing to avoid the tests waiting for the timeout to finish.
+ * @returns {number} Fixed timeout ID 1
+ */
+export const noCallbackTimeoutFunction: TimeoutFunction = (): number => 1

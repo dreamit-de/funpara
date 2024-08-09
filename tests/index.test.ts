@@ -1,9 +1,15 @@
-import type { DateFunction, FetchFunction } from '@/index'
+import type {
+    DateFunction,
+    ExitFunction,
+    FetchFunction,
+    TimeoutFunction,
+} from '@/index'
 import {
     brokenJSONFetchFunction,
     doNotExitFunction,
     fixedDateFunction,
     fixedResponseFetchFunction,
+    noCallbackTimeoutFunction,
     notFoundFetchFunction,
     nowDateFunction,
     testDateFunction,
@@ -19,12 +25,16 @@ import { expect, test } from 'vitest'
  * and prepareLogMessage functions in order to be able to set a custom DateFunction if necessary.
  */
 class Logger {
+    logEntries: Array<string> = []
+
     /**
      * Setting the default value to nowDateFunction will make it
      * easier to call the function without the caller providing a DateFunction argument
      */
     log(message: string, dateFunction: DateFunction = nowDateFunction()): void {
-        console.log(this.prepareLogMessage(message, dateFunction))
+        const logEntry = this.prepareLogMessage(message, dateFunction)
+        this.logEntries.push(logEntry)
+        console.log(logEntry)
     }
 
     /**
@@ -166,4 +176,31 @@ test('Test exit functions', () => {
     expect(() => doNotExitFunction(1)).toThrow(
         'Exit function was called with code 1',
     )
+})
+
+test('Test timeout functions', () => {
+    const logger = new Logger()
+    // noCallbackTimeoutFunction should return a fixed timeout ID 1
+    expect(
+        noCallbackTimeoutFunction(
+            () => logger.log('This should not be executed!'),
+            1000,
+        ),
+    ).toBe(1)
+    // Log call in callback function should not be executed
+    expect(logger.logEntries.length).toBe(0)
+})
+
+test('Test types match expected types of their default/original implementation', () => {
+    /*
+     * Note:
+     * While this test might still pass for type mismatches,
+     * the type check in "check" script will fail if the types do not match and cannot be casted
+     */
+    const defaultFetchFunction: FetchFunction = global.fetch
+    expect(defaultFetchFunction).toBeDefined()
+    const defaultExitFunction: ExitFunction = process.exit
+    expect(defaultExitFunction).toBeDefined()
+    const defaultTimeoutFunction: TimeoutFunction = global.setTimeout
+    expect(defaultTimeoutFunction).toBeDefined()
 })

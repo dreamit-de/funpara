@@ -1,6 +1,6 @@
 # funpara
 
-Function parameter library to ease development and testing. The library provides Date, Exit and Fetch related functions that can be used without complicated spy/mock setups so that an application can easily be tested with function parameters.
+Function parameter library to ease development and testing. The library provides Date, Exit, Fetch and Timeout related functions that can be used without complicated spy/mock setups so that an application can easily be tested with function parameters.
 
 ## Installation
 
@@ -63,6 +63,7 @@ In **tests/index.test.ts** there are additional examples how the available code 
 -   **DateFunction**: Type for a function that returns a Date.
 -   **ExitFunction**: Type for a function that given an exit code does not return anything.
 -   **FetchFunction**: Type for a fetch function that given an input (url, request, etc.) and request init returns a Promise<Response>
+-   **TimeoutFunction**: Type for a function that given a TimerHandler, optional timeout and arguments returns the timeout ID as number.
 
 ### Core functions
 
@@ -82,6 +83,7 @@ The following functions return a fix value. This can be helpful for testing code
 -   **brokenJSONFetchFunction**: FetchFunction that returns a fixed Response with broken JSON (missing bracket)
 -   **unknownContentTypeFetchFunction**: FetchFunction that returns a fixed Response with an unknown Content-Type ('application/unknown')
 -   **timeoutFetchFunction**: FetchFunction that returns a fixed Response that throws a Timeout error.
+-   **noCallbackTimeoutFunction**: TimeoutFunction that does not call the callback function but returns a fixed timeout ID 1.
 
 ## Contact
 
