@@ -53,13 +53,13 @@ class Logger {
 /**
  * Example async function to test the fetch functions.
  * This function tries to fetch user data from a server and returns a string with the user data.
- * By providing an optional function parameter fetchFunction that is set to global.fetch this
+ * By providing an optional function parameter fetchFunction that is set to globalThis.fetch this
  * would try to fetch the user data from a server. In tests this function can be set to test
  * different scenarios like a successful fetch, a "not found" response or a timeout response.
  */
 async function getUserById(
     id: string,
-    fetchFunction: FetchFunction = global.fetch,
+    fetchFunction: FetchFunction = globalThis.fetch,
 ): Promise<string> {
     try {
         const userDataResponse = await fetchFunction(
@@ -79,7 +79,7 @@ async function getUserById(
  * This function tries to work with JSON data so these scenarios can be tested.
  */
 async function getJSONMessage(
-    fetchFunction: FetchFunction = global.fetch,
+    fetchFunction: FetchFunction = globalThis.fetch,
 ): Promise<{ data: { message: string } }> {
     try {
         const messageResponse = await fetchFunction(
@@ -197,10 +197,10 @@ test('Test types match expected types of their default/original implementation',
      * While this test might still pass for type mismatches,
      * the type check in "check" script will fail if the types do not match and cannot be casted
      */
-    const defaultFetchFunction: FetchFunction = global.fetch
+    const defaultFetchFunction: FetchFunction = globalThis.fetch
     expect(defaultFetchFunction).toBeDefined()
     const defaultExitFunction: ExitFunction = process.exit
     expect(defaultExitFunction).toBeDefined()
-    const defaultTimeoutFunction: TimeoutFunction = global.setTimeout
+    const defaultTimeoutFunction: TimeoutFunction = globalThis.setTimeout
     expect(defaultTimeoutFunction).toBeDefined()
 })
