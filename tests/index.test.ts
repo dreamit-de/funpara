@@ -5,10 +5,16 @@ import type {
     TimeoutFunction,
 } from '@/index'
 import {
+    aggregateErrorFetchFunction,
+    badRequestFetchFunction,
     brokenJSONFetchFunction,
     doNotExitFunction,
     fixedDateFunction,
     fixedResponseFetchFunction,
+    graphQLIntrospectionDisabledFetchFunction,
+    graphQLInvalidBodyFetchFunction,
+    graphQLInvalidSchemaFetchFunction,
+    internalServerErrorFetchFunction,
     noCallbackTimeoutFunction,
     notFoundFetchFunction,
     nowDateFunction,
@@ -66,7 +72,7 @@ async function getUserById(
             `https://localhost:3000/users/${id}`,
         )
         if (!userDataResponse.ok) {
-            return 'User was not found'
+            return `User was not found. Status is ${userDataResponse.status}`
         }
         return `User ${await userDataResponse.text()}`
     } catch (error) {
@@ -137,14 +143,46 @@ test('Test fetch functions', async () => {
         ),
     ).toBe('User John Doe')
 
+    // Test that badRequestFetchFunction is handled properly
+    expect(await getUserById('1', badRequestFetchFunction)).toBe(
+        'User was not found. Status is 400',
+    )
+
     // Test that notFoundFetchFunction is handled properly
     expect(await getUserById('1', notFoundFetchFunction)).toBe(
-        'User was not found',
+        'User was not found. Status is 404',
+    )
+
+    // Test that internalServerErrorFetchFunction is handled properly
+    expect(await getUserById('1', internalServerErrorFetchFunction)).toBe(
+        'User was not found. Status is 500',
     )
 
     // Test that timeoutFetchFunction is handled properly
     expect(await getUserById('1', timeoutFetchFunction)).toBe(
         'Error: Error: Connection failed ETIMEDOUT',
+    )
+
+    // Test that aggregateErrorFetchFunction is handled properly
+    expect(await getUserById('1', aggregateErrorFetchFunction)).toBe(
+        'User {"errors":[{"message":"aaa The first error!, The second error!", "originalError": {"errors": [{"message":"The first error!"}, {"message":"The second error!"}  ] }  }]}',
+    )
+
+    // Test that graphQLIntrospectionDisabledFetchFunction is handled properly
+    expect(
+        await getUserById('1', graphQLIntrospectionDisabledFetchFunction),
+    ).toBe(
+        'User {"errors": [ { "message": "Introspection is disabled"}],"data": null}',
+    )
+
+    // Test that graphQLInvalidSchemaFetchFunction is handled properly
+    expect(await getUserById('1', graphQLInvalidSchemaFetchFunction)).toBe(
+        'User {"data": {"__schema":"NotAGraphQLSchema", "_service": {"sdl":"NotAGraphQLSchema"}}}',
+    )
+
+    // Test that graphQLInvalidBodyFetchFunction is handled properly
+    expect(await getUserById('1', graphQLInvalidBodyFetchFunction)).toBe(
+        'User {"message": "I am not GraphQL!"}',
     )
 
     // Test that fixedResponseFetchFunction with a JSON response return the correct response

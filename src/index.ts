@@ -66,6 +66,13 @@ export function fixedResponseFetchFunction(
 }
 
 /**
+ * FetchFunction that returns a fixed Response with and empty body and status 400 (Bad Request).
+ */
+export const badRequestFetchFunction = fixedResponseFetchFunction(undefined, {
+    status: 400,
+})
+
+/**
  * FetchFunction that returns a fixed Response with and empty body and status 404 (Not Found).
  */
 export const notFoundFetchFunction: FetchFunction = fixedResponseFetchFunction(
@@ -74,7 +81,15 @@ export const notFoundFetchFunction: FetchFunction = fixedResponseFetchFunction(
 )
 
 /**
- * FetchFunction that returns a fixed Response with  broken JSON (missing bracket)
+ * FetchFunction that returns a fixed Response with and empty body and status 500 (Internal Server Error).
+ */
+export const internalServerErrorFetchFunction = fixedResponseFetchFunction(
+    undefined,
+    { status: 500 },
+)
+
+/**
+ * FetchFunction that returns a fixed Response with broken JSON (missing bracket)
  */
 export const brokenJSONFetchFunction: FetchFunction =
     fixedResponseFetchFunction('{"data": {"message": "Missing bracket"}', {
@@ -99,6 +114,43 @@ export const timeoutFetchFunction: FetchFunction = (): Promise<Response> =>
     new Promise<Response>(() => {
         throw new Error('Connection failed ETIMEDOUT')
     })
+
+/**
+ * FetchFunction that returns a fixed Response with an AggregateError.
+ */
+export const aggregateErrorFetchFunction = fixedResponseFetchFunction(
+    '{"errors":[{"message":"aaa The first error!, The second error!", "originalError": {"errors": [{"message":"The first error!"}, {"message":"The second error!"}  ] }  }]}',
+    {
+        headers: { 'Content-Type': 'application/json' },
+        status: 200,
+    },
+)
+
+/**
+ * FetchFunction that returns a fixed Response that GraphQL introspection is disabled.
+ */
+export const graphQLIntrospectionDisabledFetchFunction =
+    fixedResponseFetchFunction(
+        '{"errors": [ { "message": "Introspection is disabled"}],"data": null}',
+        { status: 200 },
+    )
+
+/**
+ * FetchFunction that returns a fixed Response with an invalid GraphQL schema.
+ */
+export const graphQLInvalidSchemaFetchFunction = fixedResponseFetchFunction(
+    '{"data": {"__schema":"NotAGraphQLSchema", ' +
+        '"_service": {"sdl":"NotAGraphQLSchema"}}}',
+    { status: 200 },
+)
+
+/**
+ * FetchFunction that returns a fixed Response with an invalid GraphQL body.
+ */
+export const graphQLInvalidBodyFetchFunction = fixedResponseFetchFunction(
+    '{"message": "I am not GraphQL!"}',
+    { status: 200 },
+)
 
 // Exit function related types and functions
 

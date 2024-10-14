@@ -79,10 +79,16 @@ The following core functions can be used to create a new function or create dyna
 The following functions return a fix value. This can be helpful for testing code with different scenarios.
 
 -   **testDateFunction**: DateFunction that returns a fixed test date '1001-01-01T00:00:00.000Z'
+-   **badRequestFetchFunction**: FetchFunction that returns a fixed Response with and empty body and status 400 (Bad Request).
 -   **notFoundFetchFunction**: FetchFunction that returns a fixed Response with and empty body and status 404 (Not Found).
+-   **internalServerErrorFetchFunction**: FetchFunction that returns a fixed Response with and empty body and status 500 (Internal Server Error).
 -   **brokenJSONFetchFunction**: FetchFunction that returns a fixed Response with broken JSON (missing bracket)
 -   **unknownContentTypeFetchFunction**: FetchFunction that returns a fixed Response with an unknown Content-Type ('application/unknown')
 -   **timeoutFetchFunction**: FetchFunction that returns a fixed Response that throws a Timeout error.
+-   **aggregateErrorFetchFunction**: FetchFunction that returns a fixed Response with an AggregateError.
+-   **graphQLIntrospectionDisabledFetchFunction**: FetchFunction that returns a fixed Response that GraphQL introspection is disabled.
+-   **graphQLInvalidSchemaFetchFunction**: FetchFunction that returns a fixed Response with an invalid GraphQL schema.
+-   **graphQLInvalidBodyFetchFunction**: FetchFunction that returns a fixed Response with an invalid GraphQL body.
 -   **noCallbackTimeoutFunction**: TimeoutFunction that does not call the callback function but returns a fixed timeout ID 1.
 
 ## Contact
