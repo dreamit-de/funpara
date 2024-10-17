@@ -42,7 +42,7 @@
     },
     "homepage": "https://github.com/dreamit-de/funpara#readme",
     "devDependencies": {
-        "@types/node": "22.7.5",
+        "@types/node": "22.7.6",
         "@vitest/coverage-v8": "2.1.3",
         "eslint-plugin-deprecation": "3.0.0",
         "eslint-plugin-import": "2.31.0",
