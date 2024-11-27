@@ -60,36 +60,36 @@ In **tests/index.test.ts** there are additional examples how the available code 
 
 ### Types
 
--   **DateFunction**: Type for a function that returns a Date.
--   **ExitFunction**: Type for a function that given an exit code does not return anything.
--   **FetchFunction**: Type for a fetch function that given an input (url, request, etc.) and request init returns a Promise<Response>
--   **TimeoutFunction**: Type for a function that given a TimerHandler, optional timeout and arguments returns the timeout ID as number.
+- **DateFunction**: Type for a function that returns a Date.
+- **ExitFunction**: Type for a function that given an exit code does not return anything.
+- **FetchFunction**: Type for a fetch function that given an input (url, request, etc.) and request init returns a Promise<Response>
+- **TimeoutFunction**: Type for a function that given a TimerHandler, optional timeout and arguments returns the timeout ID as number.
 
 ### Core functions
 
 The following core functions can be used to create a new function or create dynamic return values in the function.
 
--   **nowDateFunction**: Returns a DateFunction that returns the current date.
--   **fixedDateFunction**: Returns a DateFunction that returns a fixed date that matches the given date string.
--   **doNotExitFunction**: Exit function that does not exit the process but throws an error instead.
--   **fixedResponseFetchFunction**: Returns a FetchFunction that always returns a fixed response that matches the given body init and response init values.
+- **nowDateFunction**: Returns a DateFunction that returns the current date.
+- **fixedDateFunction**: Returns a DateFunction that returns a fixed date that matches the given date string.
+- **doNotExitFunction**: Exit function that does not exit the process but throws an error instead.
+- **fixedResponseFetchFunction**: Returns a FetchFunction that always returns a fixed response that matches the given body init and response init values.
 
 ### Fixed value functions
 
 The following functions return a fix value. This can be helpful for testing code with different scenarios.
 
--   **testDateFunction**: DateFunction that returns a fixed test date '1001-01-01T00:00:00.000Z'
--   **badRequestFetchFunction**: FetchFunction that returns a fixed Response with and empty body and status 400 (Bad Request).
--   **notFoundFetchFunction**: FetchFunction that returns a fixed Response with and empty body and status 404 (Not Found).
--   **internalServerErrorFetchFunction**: FetchFunction that returns a fixed Response with and empty body and status 500 (Internal Server Error).
--   **brokenJSONFetchFunction**: FetchFunction that returns a fixed Response with broken JSON (missing bracket)
--   **unknownContentTypeFetchFunction**: FetchFunction that returns a fixed Response with an unknown Content-Type ('application/unknown')
--   **timeoutFetchFunction**: FetchFunction that returns a fixed Response that throws a Timeout error.
--   **aggregateErrorFetchFunction**: FetchFunction that returns a fixed Response with an AggregateError.
--   **graphQLIntrospectionDisabledFetchFunction**: FetchFunction that returns a fixed Response that GraphQL introspection is disabled.
--   **graphQLInvalidSchemaFetchFunction**: FetchFunction that returns a fixed Response with an invalid GraphQL schema.
--   **graphQLInvalidBodyFetchFunction**: FetchFunction that returns a fixed Response with an invalid GraphQL body.
--   **noCallbackTimeoutFunction**: TimeoutFunction that does not call the callback function but returns a fixed timeout ID 1.
+- **testDateFunction**: DateFunction that returns a fixed test date '1001-01-01T00:00:00.000Z'
+- **badRequestFetchFunction**: FetchFunction that returns a fixed Response with and empty body and status 400 (Bad Request).
+- **notFoundFetchFunction**: FetchFunction that returns a fixed Response with and empty body and status 404 (Not Found).
+- **internalServerErrorFetchFunction**: FetchFunction that returns a fixed Response with and empty body and status 500 (Internal Server Error).
+- **brokenJSONFetchFunction**: FetchFunction that returns a fixed Response with broken JSON (missing bracket)
+- **unknownContentTypeFetchFunction**: FetchFunction that returns a fixed Response with an unknown Content-Type ('application/unknown')
+- **timeoutFetchFunction**: FetchFunction that returns a fixed Response that throws a Timeout error.
+- **aggregateErrorFetchFunction**: FetchFunction that returns a fixed Response with an AggregateError.
+- **graphQLIntrospectionDisabledFetchFunction**: FetchFunction that returns a fixed Response that GraphQL introspection is disabled.
+- **graphQLInvalidSchemaFetchFunction**: FetchFunction that returns a fixed Response with an invalid GraphQL schema.
+- **graphQLInvalidBodyFetchFunction**: FetchFunction that returns a fixed Response with an invalid GraphQL body.
+- **noCallbackTimeoutFunction**: TimeoutFunction that does not call the callback function but returns a fixed timeout ID 1.
 
 ## Contact
 
