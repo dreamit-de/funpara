@@ -1,14 +1,11 @@
-import type {
-    DateFunction,
-    ExitFunction,
-    FetchFunction,
-    TimeoutFunction,
-} from '@/index'
 import {
     aggregateErrorFetchFunction,
     badRequestFetchFunction,
     brokenJSONFetchFunction,
+    DateFunction,
     doNotExitFunction,
+    ExitFunction,
+    FetchFunction,
     fixedDateFunction,
     fixedResponseFetchFunction,
     graphQLIntrospectionDisabledFetchFunction,
@@ -21,6 +18,7 @@ import {
     testDateFunction,
     testDateString,
     timeoutFetchFunction,
+    TimeoutFunction,
     unknownContentTypeFetchFunction,
 } from '@/index'
 import { expect, test } from 'vitest'
@@ -31,7 +29,7 @@ import { expect, test } from 'vitest'
  * and prepareLogMessage functions in order to be able to set a custom DateFunction if necessary.
  */
 class Logger {
-    logEntries: Array<string> = []
+    logEntries: string[] = []
 
     /**
      * Setting the default value to nowDateFunction will make it
