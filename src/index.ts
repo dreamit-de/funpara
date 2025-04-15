@@ -5,14 +5,14 @@
 /**
  * Type for a function that returns a Date.
  */
-export type DateFunction = () => Date
+type DateFunction = () => Date
 
 /**
  * Returns a DateFunction that returns the current date.
  * Can for example be used to get the current date when logging.
  * @returns DateFunction function returning the current data
  */
-export function nowDateFunction(): DateFunction {
+function nowDateFunction(): DateFunction {
     return (): Date => new Date()
 }
 
@@ -22,7 +22,7 @@ export function nowDateFunction(): DateFunction {
  * @param dateString fixed date string
  * @returns DateFunction function returning the fixed date
  */
-export function fixedDateFunction(dateString: string): DateFunction {
+function fixedDateFunction(dateString: string): DateFunction {
     return (): Date => new Date(dateString)
 }
 
@@ -31,13 +31,13 @@ export function fixedDateFunction(dateString: string): DateFunction {
  * '1001-01-01T00:00:00.000Z'
  * as ISO Date string. Can be used to ease and unify testing.
  */
-export const testDateString = '1001-01-01T00:00:00.000Z'
+const testDateString = '1001-01-01T00:00:00.000Z'
 
 /**
  * DateFunction that returns the test date.
  * Can for example be used to always get the date when testing.
  */
-export const testDateFunction: DateFunction = fixedDateFunction(testDateString)
+const testDateFunction: DateFunction = fixedDateFunction(testDateString)
 
 // Fetch related types and functions
 
@@ -45,7 +45,7 @@ export const testDateFunction: DateFunction = fixedDateFunction(testDateString)
  * Type for a fetch function that given an input (url, request, etc.) and request init
  * returns a Promise<Response>
  */
-export type FetchFunction = (
+type FetchFunction = (
     input: string | URL | Request,
     init?: RequestInit,
 ) => Promise<Response>
@@ -57,7 +57,7 @@ export type FetchFunction = (
  * @param init response init
  * @returns FetchFunction function returning the fixed Response
  */
-export function fixedResponseFetchFunction(
+function fixedResponseFetchFunction(
     bodyInit?: BodyInit,
     init?: ResponseInit,
 ): FetchFunction {
@@ -68,14 +68,14 @@ export function fixedResponseFetchFunction(
 /**
  * FetchFunction that returns a fixed Response with and empty body and status 400 (Bad Request).
  */
-export const badRequestFetchFunction = fixedResponseFetchFunction(undefined, {
+const badRequestFetchFunction = fixedResponseFetchFunction(undefined, {
     status: 400,
 })
 
 /**
  * FetchFunction that returns a fixed Response with and empty body and status 404 (Not Found).
  */
-export const notFoundFetchFunction: FetchFunction = fixedResponseFetchFunction(
+const notFoundFetchFunction: FetchFunction = fixedResponseFetchFunction(
     undefined,
     { status: 404 },
 )
@@ -83,25 +83,26 @@ export const notFoundFetchFunction: FetchFunction = fixedResponseFetchFunction(
 /**
  * FetchFunction that returns a fixed Response with and empty body and status 500 (Internal Server Error).
  */
-export const internalServerErrorFetchFunction = fixedResponseFetchFunction(
-    undefined,
-    { status: 500 },
-)
+const internalServerErrorFetchFunction = fixedResponseFetchFunction(undefined, {
+    status: 500,
+})
 
 /**
  * FetchFunction that returns a fixed Response with broken JSON (missing bracket)
  */
-export const brokenJSONFetchFunction: FetchFunction =
-    fixedResponseFetchFunction('{"data": {"message": "Missing bracket"}', {
+const brokenJSONFetchFunction: FetchFunction = fixedResponseFetchFunction(
+    '{"data": {"message": "Missing bracket"}',
+    {
         headers: { 'Content-Type': 'application/json' },
         status: 200,
-    })
+    },
+)
 
 /**
  * FetchFunction that returns a fixed Response with an unknown
  * Content-Type ('application/unknown')
  */
-export const unknownContentTypeFetchFunction: FetchFunction =
+const unknownContentTypeFetchFunction: FetchFunction =
     fixedResponseFetchFunction(undefined, {
         headers: { 'Content-Type': 'application/unknown' },
         status: 200,
@@ -110,7 +111,7 @@ export const unknownContentTypeFetchFunction: FetchFunction =
 /**
  * FetchFunction that returns a fixed Response that throws a Timeout error.
  */
-export const timeoutFetchFunction: FetchFunction = (): Promise<Response> =>
+const timeoutFetchFunction: FetchFunction = (): Promise<Response> =>
     new Promise<Response>(() => {
         throw new Error('Connection failed ETIMEDOUT')
     })
@@ -118,7 +119,7 @@ export const timeoutFetchFunction: FetchFunction = (): Promise<Response> =>
 /**
  * FetchFunction that returns a fixed Response with an AggregateError.
  */
-export const aggregateErrorFetchFunction = fixedResponseFetchFunction(
+const aggregateErrorFetchFunction = fixedResponseFetchFunction(
     '{"errors":[{"message":"aaa The first error!, The second error!", "originalError": {"errors": [{"message":"The first error!"}, {"message":"The second error!"}  ] }  }]}',
     {
         headers: { 'Content-Type': 'application/json' },
@@ -129,16 +130,15 @@ export const aggregateErrorFetchFunction = fixedResponseFetchFunction(
 /**
  * FetchFunction that returns a fixed Response that GraphQL introspection is disabled.
  */
-export const graphQLIntrospectionDisabledFetchFunction =
-    fixedResponseFetchFunction(
-        '{"errors": [ { "message": "Introspection is disabled"}],"data": null}',
-        { status: 200 },
-    )
+const graphQLIntrospectionDisabledFetchFunction = fixedResponseFetchFunction(
+    '{"errors": [ { "message": "Introspection is disabled"}],"data": null}',
+    { status: 200 },
+)
 
 /**
  * FetchFunction that returns a fixed Response with an invalid GraphQL schema.
  */
-export const graphQLInvalidSchemaFetchFunction = fixedResponseFetchFunction(
+const graphQLInvalidSchemaFetchFunction = fixedResponseFetchFunction(
     '{"data": {"__schema":"NotAGraphQLSchema", ' +
         '"_service": {"sdl":"NotAGraphQLSchema"}}}',
     { status: 200 },
@@ -147,7 +147,7 @@ export const graphQLInvalidSchemaFetchFunction = fixedResponseFetchFunction(
 /**
  * FetchFunction that returns a fixed Response with an invalid GraphQL body.
  */
-export const graphQLInvalidBodyFetchFunction = fixedResponseFetchFunction(
+const graphQLInvalidBodyFetchFunction = fixedResponseFetchFunction(
     '{"message": "I am not GraphQL!"}',
     { status: 200 },
 )
@@ -159,7 +159,7 @@ export const graphQLInvalidBodyFetchFunction = fixedResponseFetchFunction(
  * @param {number} code The exit code to use
  * @returns {never} Does not return anything, may e.g. exit the process or throw an error
  */
-export type ExitFunction = (code: number) => never
+type ExitFunction = (code: number) => never
 
 /**
  * Exit function that does not exit the process but throws an error instead
@@ -168,7 +168,7 @@ export type ExitFunction = (code: number) => never
  * @returns {never} Does not return anything but throws an error with the message
  * "Exit function was called with code CODE" where CODE is the given code.
  */
-export const doNotExitFunction: ExitFunction = (code: number): never => {
+const doNotExitFunction: ExitFunction = (code: number): never => {
     throw new Error(`Exit function was called with code ${code}`)
 }
 
@@ -181,7 +181,7 @@ export const doNotExitFunction: ExitFunction = (code: number): never => {
  * @param {any[]} timeoutArguments The arguments to be passed to the handler
  * @returns {number} The timeout ID as number
  */
-export type TimeoutFunction = (
+type TimeoutFunction = (
     handler: TimerHandler,
     timeout?: number,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -193,4 +193,28 @@ export type TimeoutFunction = (
  * Can be used in testing to avoid the tests waiting for the timeout to finish.
  * @returns {number} Fixed timeout ID 1
  */
-export const noCallbackTimeoutFunction: TimeoutFunction = (): number => 1
+const noCallbackTimeoutFunction: TimeoutFunction = (): number => 1
+
+export {
+    DateFunction,
+    ExitFunction,
+    FetchFunction,
+    TimeoutFunction,
+    aggregateErrorFetchFunction,
+    badRequestFetchFunction,
+    brokenJSONFetchFunction,
+    doNotExitFunction,
+    fixedDateFunction,
+    fixedResponseFetchFunction,
+    graphQLIntrospectionDisabledFetchFunction,
+    graphQLInvalidBodyFetchFunction,
+    graphQLInvalidSchemaFetchFunction,
+    internalServerErrorFetchFunction,
+    noCallbackTimeoutFunction,
+    notFoundFetchFunction,
+    nowDateFunction,
+    testDateFunction,
+    testDateString,
+    timeoutFetchFunction,
+    unknownContentTypeFetchFunction,
+}
