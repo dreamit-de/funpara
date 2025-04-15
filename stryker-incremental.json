@@ -4,6 +4,31 @@
       "language": "typescript",
       "mutants": [
         {
+          "id": "0",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "dateFunction is not a function",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "0"
+          ],
+          "coveredBy": [
+            "0"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 17
+            },
+            "start": {
+              "column": 42,
+              "line": 15
+            }
+          }
+        },
+        {
           "id": "1",
           "mutatorName": "ArrowFunction",
           "replacement": "() => undefined",
@@ -25,6 +50,31 @@
             "start": {
               "column": 12,
               "line": 16
+            }
+          }
+        },
+        {
+          "id": "2",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected '2025-04-15T13:18:54.559Z : I am a log…' to be '2023-09-06T00:00:00.000Z : I am a log…' // Object.is equality",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": true,
+          "killedBy": [
+            "0"
+          ],
+          "coveredBy": [
+            "0"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 27
+            },
+            "start": {
+              "column": 62,
+              "line": 25
             }
           }
         },
@@ -170,12 +220,12 @@
           "coveredBy": [],
           "location": {
             "end": {
-              "column": 20,
+              "column": 2,
               "line": 88
             },
             "start": {
-              "column": 5,
-              "line": 88
+              "column": 80,
+              "line": 86
             }
           }
         },
@@ -189,12 +239,12 @@
           "coveredBy": [],
           "location": {
             "end": {
-              "column": 73,
-              "line": 95
+              "column": 46,
+              "line": 94
             },
             "start": {
-              "column": 32,
-              "line": 95
+              "column": 5,
+              "line": 94
             }
           }
         },
@@ -212,7 +262,7 @@
               "line": 98
             },
             "start": {
-              "column": 75,
+              "column": 5,
               "line": 95
             }
           }
@@ -266,11 +316,11 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 108
+              "line": 109
             },
             "start": {
               "column": 43,
-              "line": 105
+              "line": 106
             }
           }
         },
@@ -285,11 +335,11 @@
           "location": {
             "end": {
               "column": 59,
-              "line": 106
+              "line": 107
             },
             "start": {
               "column": 18,
-              "line": 106
+              "line": 107
             }
           }
         },
@@ -304,11 +354,11 @@
           "location": {
             "end": {
               "column": 57,
-              "line": 106
+              "line": 107
             },
             "start": {
               "column": 36,
-              "line": 106
+              "line": 107
             }
           }
         },
@@ -323,11 +373,11 @@
           "location": {
             "end": {
               "column": 7,
-              "line": 116
+              "line": 117
             },
             "start": {
               "column": 45,
-              "line": 113
+              "line": 114
             }
           }
         },
@@ -348,11 +398,11 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 116
+              "line": 117
             },
             "start": {
               "column": 33,
-              "line": 114
+              "line": 115
             }
           }
         },
@@ -373,11 +423,11 @@
           "location": {
             "end": {
               "column": 54,
-              "line": 115
+              "line": 116
             },
             "start": {
               "column": 25,
-              "line": 115
+              "line": 116
             }
           }
         },
@@ -392,11 +442,11 @@
           "location": {
             "end": {
               "column": 174,
-              "line": 122
+              "line": 123
             },
             "start": {
               "column": 5,
-              "line": 122
+              "line": 123
             }
           }
         },
@@ -411,11 +461,11 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 126
+              "line": 127
             },
             "start": {
               "column": 5,
-              "line": 123
+              "line": 124
             }
           }
         },
@@ -430,11 +480,11 @@
           "location": {
             "end": {
               "column": 56,
-              "line": 124
+              "line": 125
             },
             "start": {
               "column": 18,
-              "line": 124
+              "line": 125
             }
           }
         },
@@ -449,11 +499,11 @@
           "location": {
             "end": {
               "column": 54,
-              "line": 124
+              "line": 125
             },
             "start": {
               "column": 36,
-              "line": 124
+              "line": 125
             }
           }
         },
@@ -467,11 +517,11 @@
           "coveredBy": [],
           "location": {
             "end": {
-              "column": 80,
+              "column": 76,
               "line": 134
             },
             "start": {
-              "column": 9,
+              "column": 5,
               "line": 134
             }
           }
@@ -486,11 +536,11 @@
           "coveredBy": [],
           "location": {
             "end": {
-              "column": 24,
+              "column": 20,
               "line": 135
             },
             "start": {
-              "column": 9,
+              "column": 5,
               "line": 135
             }
           }
@@ -591,6 +641,31 @@
           }
         },
         {
+          "id": "31",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected [Function] to throw an error",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "2"
+          ],
+          "coveredBy": [
+            "2"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 173
+            },
+            "start": {
+              "column": 66,
+              "line": 171
+            }
+          }
+        },
+        {
           "id": "32",
           "mutatorName": "StringLiteral",
           "replacement": "``",
@@ -633,84 +708,9 @@
               "line": 196
             }
           }
-        },
-        {
-          "id": "2",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected '2025-04-15T13:18:54.559Z : I am a log…' to be '2023-09-06T00:00:00.000Z : I am a log…' // Object.is equality",
-          "status": "Killed",
-          "static": true,
-          "testsCompleted": 1,
-          "killedBy": [
-            "0"
-          ],
-          "coveredBy": [
-            "0"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 27
-            },
-            "start": {
-              "column": 62,
-              "line": 25
-            }
-          }
-        },
-        {
-          "id": "0",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "dateFunction is not a function",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "0"
-          ],
-          "coveredBy": [
-            "0"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 17
-            },
-            "start": {
-              "column": 42,
-              "line": 15
-            }
-          }
-        },
-        {
-          "id": "31",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected [Function] to throw an error",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "2"
-          ],
-          "coveredBy": [
-            "2"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 173
-            },
-            "start": {
-              "column": 66,
-              "line": 171
-            }
-          }
         }
       ],
-      "source": "/* eslint-disable @typescript-eslint/naming-convention */\n\n// Date related types and functions\n\n/**\n * Type for a function that returns a Date.\n */\ntype DateFunction = () => Date\n\n/**\n * Returns a DateFunction that returns the current date.\n * Can for example be used to get the current date when logging.\n * @returns DateFunction function returning the current data\n */\nfunction nowDateFunction(): DateFunction {\n    return (): Date => new Date()\n}\n\n/**\n * Returns a DateFunction that returns a fixed date.\n * Can for example be used to get a fixed date for testing.\n * @param dateString fixed date string\n * @returns DateFunction function returning the fixed date\n */\nfunction fixedDateFunction(dateString: string): DateFunction {\n    return (): Date => new Date(dateString)\n}\n\n/**\n * Test date\n * '1001-01-01T00:00:00.000Z'\n * as ISO Date string. Can be used to ease and unify testing.\n */\nconst testDateString = '1001-01-01T00:00:00.000Z'\n\n/**\n * DateFunction that returns the test date.\n * Can for example be used to always get the date when testing.\n */\nconst testDateFunction: DateFunction = fixedDateFunction(testDateString)\n\n// Fetch related types and functions\n\n/**\n * Type for a fetch function that given an input (url, request, etc.) and request init\n * returns a Promise<Response>\n */\ntype FetchFunction = (\n    input: string | URL | Request,\n    init?: RequestInit,\n) => Promise<Response>\n\n/**\n * Returns a FetchFunction that always returns a fixed response.\n * Can for example be used to get a fixed Response for testing.\n * @param bodyInit body for the response\n * @param init response init\n * @returns FetchFunction function returning the fixed Response\n */\nfunction fixedResponseFetchFunction(\n    bodyInit?: BodyInit,\n    init?: ResponseInit,\n): FetchFunction {\n    return (): Promise<Response> =>\n        Promise.resolve(new Response(bodyInit, init))\n}\n\n/**\n * FetchFunction that returns a fixed Response with and empty body and status 400 (Bad Request).\n */\nconst badRequestFetchFunction = fixedResponseFetchFunction(undefined, {\n    status: 400,\n})\n\n/**\n * FetchFunction that returns a fixed Response with and empty body and status 404 (Not Found).\n */\nconst notFoundFetchFunction: FetchFunction = fixedResponseFetchFunction(\n    undefined,\n    { status: 404 },\n)\n\n/**\n * FetchFunction that returns a fixed Response with and empty body and status 500 (Internal Server Error).\n */\nconst internalServerErrorFetchFunction = fixedResponseFetchFunction(\n    undefined,\n    { status: 500 },\n)\n\n/**\n * FetchFunction that returns a fixed Response with broken JSON (missing bracket)\n */\nconst brokenJSONFetchFunction: FetchFunction =\n    fixedResponseFetchFunction('{\"data\": {\"message\": \"Missing bracket\"}', {\n        headers: { 'Content-Type': 'application/json' },\n        status: 200,\n    })\n\n/**\n * FetchFunction that returns a fixed Response with an unknown\n * Content-Type ('application/unknown')\n */\nconst unknownContentTypeFetchFunction: FetchFunction =\n    fixedResponseFetchFunction(undefined, {\n        headers: { 'Content-Type': 'application/unknown' },\n        status: 200,\n    })\n\n/**\n * FetchFunction that returns a fixed Response that throws a Timeout error.\n */\nconst timeoutFetchFunction: FetchFunction = (): Promise<Response> =>\n    new Promise<Response>(() => {\n        throw new Error('Connection failed ETIMEDOUT')\n    })\n\n/**\n * FetchFunction that returns a fixed Response with an AggregateError.\n */\nconst aggregateErrorFetchFunction = fixedResponseFetchFunction(\n    '{\"errors\":[{\"message\":\"aaa The first error!, The second error!\", \"originalError\": {\"errors\": [{\"message\":\"The first error!\"}, {\"message\":\"The second error!\"}  ] }  }]}',\n    {\n        headers: { 'Content-Type': 'application/json' },\n        status: 200,\n    },\n)\n\n/**\n * FetchFunction that returns a fixed Response that GraphQL introspection is disabled.\n */\nconst graphQLIntrospectionDisabledFetchFunction =\n    fixedResponseFetchFunction(\n        '{\"errors\": [ { \"message\": \"Introspection is disabled\"}],\"data\": null}',\n        { status: 200 },\n    )\n\n/**\n * FetchFunction that returns a fixed Response with an invalid GraphQL schema.\n */\nconst graphQLInvalidSchemaFetchFunction = fixedResponseFetchFunction(\n    '{\"data\": {\"__schema\":\"NotAGraphQLSchema\", ' +\n        '\"_service\": {\"sdl\":\"NotAGraphQLSchema\"}}}',\n    { status: 200 },\n)\n\n/**\n * FetchFunction that returns a fixed Response with an invalid GraphQL body.\n */\nconst graphQLInvalidBodyFetchFunction = fixedResponseFetchFunction(\n    '{\"message\": \"I am not GraphQL!\"}',\n    { status: 200 },\n)\n\n// Exit function related types and functions\n\n/**\n * Type for a function that given an exit does not return anything.\n * @param {number} code The exit code to use\n * @returns {never} Does not return anything, may e.g. exit the process or throw an error\n */\ntype ExitFunction = (code: number) => never\n\n/**\n * Exit function that does not exit the process but throws an error instead\n * Can be used in testing to avoid the tests exiting the application.\n * @param {number} code The exit code to be thrown in the error\n * @returns {never} Does not return anything but throws an error with the message\n * \"Exit function was called with code CODE\" where CODE is the given code.\n */\nconst doNotExitFunction: ExitFunction = (code: number): never => {\n    throw new Error(`Exit function was called with code ${code}`)\n}\n\n// Timeout function related types and functions\n\n/**\n * Type for a function that given a TimerHandler, optional timeout and arguments returns the timeout ID as number.\n * @param {TimerHandler} handler The TimerHandler to be called (i.e. in most cases a callback function)\n * @param {number} timeout The timeout in milliseconds\n * @param {any[]} timeoutArguments The arguments to be passed to the handler\n * @returns {number} The timeout ID as number\n */\ntype TimeoutFunction = (\n    handler: TimerHandler,\n    timeout?: number,\n    // eslint-disable-next-line @typescript-eslint/no-explicit-any\n    ...timeoutArguments: any[]\n) => number\n\n/**\n * TimeoutFunction that does not call the callback function but returns a fixed timeout ID 1.\n * Can be used in testing to avoid the tests waiting for the timeout to finish.\n * @returns {number} Fixed timeout ID 1\n */\nconst noCallbackTimeoutFunction: TimeoutFunction = (): number => 1\n\nexport {\n    DateFunction,\n    nowDateFunction,\n    fixedDateFunction,\n    testDateString,\n    testDateFunction,\n    FetchFunction,\n    fixedResponseFetchFunction,\n    badRequestFetchFunction,\n    notFoundFetchFunction,\n    internalServerErrorFetchFunction,\n    brokenJSONFetchFunction,\n    unknownContentTypeFetchFunction,\n    timeoutFetchFunction,\n    aggregateErrorFetchFunction,\n    graphQLIntrospectionDisabledFetchFunction,\n    graphQLInvalidSchemaFetchFunction,\n    graphQLInvalidBodyFetchFunction,\n    ExitFunction,\n    doNotExitFunction,\n    TimeoutFunction,\n    noCallbackTimeoutFunction,\n}\n"
+      "source": "/* eslint-disable @typescript-eslint/naming-convention */\n\n// Date related types and functions\n\n/**\n * Type for a function that returns a Date.\n */\ntype DateFunction = () => Date\n\n/**\n * Returns a DateFunction that returns the current date.\n * Can for example be used to get the current date when logging.\n * @returns DateFunction function returning the current data\n */\nfunction nowDateFunction(): DateFunction {\n    return (): Date => new Date()\n}\n\n/**\n * Returns a DateFunction that returns a fixed date.\n * Can for example be used to get a fixed date for testing.\n * @param dateString fixed date string\n * @returns DateFunction function returning the fixed date\n */\nfunction fixedDateFunction(dateString: string): DateFunction {\n    return (): Date => new Date(dateString)\n}\n\n/**\n * Test date\n * '1001-01-01T00:00:00.000Z'\n * as ISO Date string. Can be used to ease and unify testing.\n */\nconst testDateString = '1001-01-01T00:00:00.000Z'\n\n/**\n * DateFunction that returns the test date.\n * Can for example be used to always get the date when testing.\n */\nconst testDateFunction: DateFunction = fixedDateFunction(testDateString)\n\n// Fetch related types and functions\n\n/**\n * Type for a fetch function that given an input (url, request, etc.) and request init\n * returns a Promise<Response>\n */\ntype FetchFunction = (\n    input: string | URL | Request,\n    init?: RequestInit,\n) => Promise<Response>\n\n/**\n * Returns a FetchFunction that always returns a fixed response.\n * Can for example be used to get a fixed Response for testing.\n * @param bodyInit body for the response\n * @param init response init\n * @returns FetchFunction function returning the fixed Response\n */\nfunction fixedResponseFetchFunction(\n    bodyInit?: BodyInit,\n    init?: ResponseInit,\n): FetchFunction {\n    return (): Promise<Response> =>\n        Promise.resolve(new Response(bodyInit, init))\n}\n\n/**\n * FetchFunction that returns a fixed Response with and empty body and status 400 (Bad Request).\n */\nconst badRequestFetchFunction = fixedResponseFetchFunction(undefined, {\n    status: 400,\n})\n\n/**\n * FetchFunction that returns a fixed Response with and empty body and status 404 (Not Found).\n */\nconst notFoundFetchFunction: FetchFunction = fixedResponseFetchFunction(\n    undefined,\n    { status: 404 },\n)\n\n/**\n * FetchFunction that returns a fixed Response with and empty body and status 500 (Internal Server Error).\n */\nconst internalServerErrorFetchFunction = fixedResponseFetchFunction(undefined, {\n    status: 500,\n})\n\n/**\n * FetchFunction that returns a fixed Response with broken JSON (missing bracket)\n */\nconst brokenJSONFetchFunction: FetchFunction = fixedResponseFetchFunction(\n    '{\"data\": {\"message\": \"Missing bracket\"}',\n    {\n        headers: { 'Content-Type': 'application/json' },\n        status: 200,\n    },\n)\n\n/**\n * FetchFunction that returns a fixed Response with an unknown\n * Content-Type ('application/unknown')\n */\nconst unknownContentTypeFetchFunction: FetchFunction =\n    fixedResponseFetchFunction(undefined, {\n        headers: { 'Content-Type': 'application/unknown' },\n        status: 200,\n    })\n\n/**\n * FetchFunction that returns a fixed Response that throws a Timeout error.\n */\nconst timeoutFetchFunction: FetchFunction = (): Promise<Response> =>\n    new Promise<Response>(() => {\n        throw new Error('Connection failed ETIMEDOUT')\n    })\n\n/**\n * FetchFunction that returns a fixed Response with an AggregateError.\n */\nconst aggregateErrorFetchFunction = fixedResponseFetchFunction(\n    '{\"errors\":[{\"message\":\"aaa The first error!, The second error!\", \"originalError\": {\"errors\": [{\"message\":\"The first error!\"}, {\"message\":\"The second error!\"}  ] }  }]}',\n    {\n        headers: { 'Content-Type': 'application/json' },\n        status: 200,\n    },\n)\n\n/**\n * FetchFunction that returns a fixed Response that GraphQL introspection is disabled.\n */\nconst graphQLIntrospectionDisabledFetchFunction = fixedResponseFetchFunction(\n    '{\"errors\": [ { \"message\": \"Introspection is disabled\"}],\"data\": null}',\n    { status: 200 },\n)\n\n/**\n * FetchFunction that returns a fixed Response with an invalid GraphQL schema.\n */\nconst graphQLInvalidSchemaFetchFunction = fixedResponseFetchFunction(\n    '{\"data\": {\"__schema\":\"NotAGraphQLSchema\", ' +\n        '\"_service\": {\"sdl\":\"NotAGraphQLSchema\"}}}',\n    { status: 200 },\n)\n\n/**\n * FetchFunction that returns a fixed Response with an invalid GraphQL body.\n */\nconst graphQLInvalidBodyFetchFunction = fixedResponseFetchFunction(\n    '{\"message\": \"I am not GraphQL!\"}',\n    { status: 200 },\n)\n\n// Exit function related types and functions\n\n/**\n * Type for a function that given an exit does not return anything.\n * @param {number} code The exit code to use\n * @returns {never} Does not return anything, may e.g. exit the process or throw an error\n */\ntype ExitFunction = (code: number) => never\n\n/**\n * Exit function that does not exit the process but throws an error instead\n * Can be used in testing to avoid the tests exiting the application.\n * @param {number} code The exit code to be thrown in the error\n * @returns {never} Does not return anything but throws an error with the message\n * \"Exit function was called with code CODE\" where CODE is the given code.\n */\nconst doNotExitFunction: ExitFunction = (code: number): never => {\n    throw new Error(`Exit function was called with code ${code}`)\n}\n\n// Timeout function related types and functions\n\n/**\n * Type for a function that given a TimerHandler, optional timeout and arguments returns the timeout ID as number.\n * @param {TimerHandler} handler The TimerHandler to be called (i.e. in most cases a callback function)\n * @param {number} timeout The timeout in milliseconds\n * @param {any[]} timeoutArguments The arguments to be passed to the handler\n * @returns {number} The timeout ID as number\n */\ntype TimeoutFunction = (\n    handler: TimerHandler,\n    timeout?: number,\n    // eslint-disable-next-line @typescript-eslint/no-explicit-any\n    ...timeoutArguments: any[]\n) => number\n\n/**\n * TimeoutFunction that does not call the callback function but returns a fixed timeout ID 1.\n * Can be used in testing to avoid the tests waiting for the timeout to finish.\n * @returns {number} Fixed timeout ID 1\n */\nconst noCallbackTimeoutFunction: TimeoutFunction = (): number => 1\n\nexport {\n    DateFunction,\n    ExitFunction,\n    FetchFunction,\n    TimeoutFunction,\n    aggregateErrorFetchFunction,\n    badRequestFetchFunction,\n    brokenJSONFetchFunction,\n    doNotExitFunction,\n    fixedDateFunction,\n    fixedResponseFetchFunction,\n    graphQLIntrospectionDisabledFetchFunction,\n    graphQLInvalidBodyFetchFunction,\n    graphQLInvalidSchemaFetchFunction,\n    internalServerErrorFetchFunction,\n    noCallbackTimeoutFunction,\n    notFoundFetchFunction,\n    nowDateFunction,\n    testDateFunction,\n    testDateString,\n    timeoutFetchFunction,\n    unknownContentTypeFetchFunction,\n}\n"
     }
   },
   "schemaVersion": "1.0",

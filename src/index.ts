@@ -83,19 +83,20 @@ const notFoundFetchFunction: FetchFunction = fixedResponseFetchFunction(
 /**
  * FetchFunction that returns a fixed Response with and empty body and status 500 (Internal Server Error).
  */
-const internalServerErrorFetchFunction = fixedResponseFetchFunction(
-    undefined,
-    { status: 500 },
-)
+const internalServerErrorFetchFunction = fixedResponseFetchFunction(undefined, {
+    status: 500,
+})
 
 /**
  * FetchFunction that returns a fixed Response with broken JSON (missing bracket)
  */
-const brokenJSONFetchFunction: FetchFunction =
-    fixedResponseFetchFunction('{"data": {"message": "Missing bracket"}', {
+const brokenJSONFetchFunction: FetchFunction = fixedResponseFetchFunction(
+    '{"data": {"message": "Missing bracket"}',
+    {
         headers: { 'Content-Type': 'application/json' },
         status: 200,
-    })
+    },
+)
 
 /**
  * FetchFunction that returns a fixed Response with an unknown
@@ -129,11 +130,10 @@ const aggregateErrorFetchFunction = fixedResponseFetchFunction(
 /**
  * FetchFunction that returns a fixed Response that GraphQL introspection is disabled.
  */
-const graphQLIntrospectionDisabledFetchFunction =
-    fixedResponseFetchFunction(
-        '{"errors": [ { "message": "Introspection is disabled"}],"data": null}',
-        { status: 200 },
-    )
+const graphQLIntrospectionDisabledFetchFunction = fixedResponseFetchFunction(
+    '{"errors": [ { "message": "Introspection is disabled"}],"data": null}',
+    { status: 200 },
+)
 
 /**
  * FetchFunction that returns a fixed Response with an invalid GraphQL schema.
@@ -197,24 +197,24 @@ const noCallbackTimeoutFunction: TimeoutFunction = (): number => 1
 
 export {
     DateFunction,
-    nowDateFunction,
-    fixedDateFunction,
-    testDateString,
-    testDateFunction,
-    FetchFunction,
-    fixedResponseFetchFunction,
-    badRequestFetchFunction,
-    notFoundFetchFunction,
-    internalServerErrorFetchFunction,
-    brokenJSONFetchFunction,
-    unknownContentTypeFetchFunction,
-    timeoutFetchFunction,
-    aggregateErrorFetchFunction,
-    graphQLIntrospectionDisabledFetchFunction,
-    graphQLInvalidSchemaFetchFunction,
-    graphQLInvalidBodyFetchFunction,
     ExitFunction,
-    doNotExitFunction,
+    FetchFunction,
     TimeoutFunction,
+    aggregateErrorFetchFunction,
+    badRequestFetchFunction,
+    brokenJSONFetchFunction,
+    doNotExitFunction,
+    fixedDateFunction,
+    fixedResponseFetchFunction,
+    graphQLIntrospectionDisabledFetchFunction,
+    graphQLInvalidBodyFetchFunction,
+    graphQLInvalidSchemaFetchFunction,
+    internalServerErrorFetchFunction,
     noCallbackTimeoutFunction,
+    notFoundFetchFunction,
+    nowDateFunction,
+    testDateFunction,
+    testDateString,
+    timeoutFetchFunction,
+    unknownContentTypeFetchFunction,
 }
