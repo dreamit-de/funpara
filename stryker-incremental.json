@@ -4,6 +4,56 @@
       "language": "typescript",
       "mutants": [
         {
+          "id": "1",
+          "mutatorName": "ArrowFunction",
+          "replacement": "() => undefined",
+          "statusReason": "Cannot read properties of undefined (reading 'toISOString')",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "0"
+          ],
+          "coveredBy": [
+            "0"
+          ],
+          "location": {
+            "end": {
+              "column": 34,
+              "line": 16
+            },
+            "start": {
+              "column": 12,
+              "line": 16
+            }
+          }
+        },
+        {
+          "id": "3",
+          "mutatorName": "ArrowFunction",
+          "replacement": "() => undefined",
+          "statusReason": "Cannot read properties of undefined (reading 'toISOString')",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": true,
+          "killedBy": [
+            "0"
+          ],
+          "coveredBy": [
+            "0"
+          ],
+          "location": {
+            "end": {
+              "column": 44,
+              "line": 26
+            },
+            "start": {
+              "column": 12,
+              "line": 26
+            }
+          }
+        },
+        {
           "id": "4",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
@@ -13,12 +63,62 @@
           "coveredBy": [],
           "location": {
             "end": {
-              "column": 57,
+              "column": 50,
               "line": 34
             },
             "start": {
-              "column": 31,
+              "column": 24,
               "line": 34
+            }
+          }
+        },
+        {
+          "id": "5",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected 'Error: TypeError: fetch failed' to be 'User John Doe' // Object.is equality",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": true,
+          "killedBy": [
+            "1"
+          ],
+          "coveredBy": [
+            "1"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 66
+            },
+            "start": {
+              "column": 18,
+              "line": 63
+            }
+          }
+        },
+        {
+          "id": "6",
+          "mutatorName": "ArrowFunction",
+          "replacement": "() => undefined",
+          "statusReason": "expected 'Error: TypeError: Cannot read propert…' to be 'User John Doe' // Object.is equality",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": true,
+          "killedBy": [
+            "1"
+          ],
+          "coveredBy": [
+            "1"
+          ],
+          "location": {
+            "end": {
+              "column": 54,
+              "line": 65
+            },
+            "start": {
+              "column": 12,
+              "line": 64
             }
           }
         },
@@ -36,7 +136,7 @@
               "line": 73
             },
             "start": {
-              "column": 78,
+              "column": 71,
               "line": 71
             }
           }
@@ -226,8 +326,58 @@
               "line": 116
             },
             "start": {
-              "column": 52,
+              "column": 45,
               "line": 113
+            }
+          }
+        },
+        {
+          "id": "18",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "Test timed out in 5000ms.\nIf this is a long-running test, pass a timeout value as the last argument or configure it globally with \"testTimeout\".",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "1"
+          ],
+          "coveredBy": [
+            "1"
+          ],
+          "location": {
+            "end": {
+              "column": 6,
+              "line": 116
+            },
+            "start": {
+              "column": 33,
+              "line": 114
+            }
+          }
+        },
+        {
+          "id": "19",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected 'Error: Error' to be 'Error: Error: Connection failed ETIME…' // Object.is equality",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "1"
+          ],
+          "coveredBy": [
+            "1"
+          ],
+          "location": {
+            "end": {
+              "column": 54,
+              "line": 115
+            },
+            "start": {
+              "column": 25,
+              "line": 115
             }
           }
         },
@@ -441,6 +591,31 @@
           }
         },
         {
+          "id": "32",
+          "mutatorName": "StringLiteral",
+          "replacement": "``",
+          "statusReason": "expected [Function] to throw error including 'Exit function was called with code 1' but got ''",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "2"
+          ],
+          "coveredBy": [
+            "2"
+          ],
+          "location": {
+            "end": {
+              "column": 65,
+              "line": 172
+            },
+            "start": {
+              "column": 21,
+              "line": 172
+            }
+          }
+        },
+        {
           "id": "33",
           "mutatorName": "ArrowFunction",
           "replacement": "() => undefined",
@@ -450,22 +625,22 @@
           "coveredBy": [],
           "location": {
             "end": {
-              "column": 74,
+              "column": 67,
               "line": 196
             },
             "start": {
-              "column": 59,
+              "column": 52,
               "line": 196
             }
           }
         },
         {
-          "id": "1",
-          "mutatorName": "ArrowFunction",
-          "replacement": "() => undefined",
-          "statusReason": "Cannot read properties of undefined (reading 'toISOString')",
+          "id": "2",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected '2025-04-15T13:18:54.559Z : I am a log…' to be '2023-09-06T00:00:00.000Z : I am a log…' // Object.is equality",
           "status": "Killed",
-          "static": false,
+          "static": true,
           "testsCompleted": 1,
           "killedBy": [
             "0"
@@ -475,12 +650,12 @@
           ],
           "location": {
             "end": {
-              "column": 34,
-              "line": 16
+              "column": 2,
+              "line": 27
             },
             "start": {
-              "column": 12,
-              "line": 16
+              "column": 62,
+              "line": 25
             }
           }
         },
@@ -504,133 +679,8 @@
               "line": 17
             },
             "start": {
-              "column": 49,
+              "column": 42,
               "line": 15
-            }
-          }
-        },
-        {
-          "id": "2",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected '2024-12-09T17:41:19.544Z : I am a log…' to be '2023-09-06T00:00:00.000Z : I am a log…' // Object.is equality",
-          "status": "Killed",
-          "static": true,
-          "testsCompleted": 1,
-          "killedBy": [
-            "0"
-          ],
-          "coveredBy": [
-            "0"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 27
-            },
-            "start": {
-              "column": 69,
-              "line": 25
-            }
-          }
-        },
-        {
-          "id": "3",
-          "mutatorName": "ArrowFunction",
-          "replacement": "() => undefined",
-          "statusReason": "Cannot read properties of undefined (reading 'toISOString')",
-          "status": "Killed",
-          "static": true,
-          "testsCompleted": 1,
-          "killedBy": [
-            "0"
-          ],
-          "coveredBy": [
-            "0"
-          ],
-          "location": {
-            "end": {
-              "column": 44,
-              "line": 26
-            },
-            "start": {
-              "column": 12,
-              "line": 26
-            }
-          }
-        },
-        {
-          "id": "5",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected 'Error: TypeError: fetch failed' to be 'User John Doe' // Object.is equality",
-          "status": "Killed",
-          "static": true,
-          "testsCompleted": 1,
-          "killedBy": [
-            "1"
-          ],
-          "coveredBy": [
-            "1"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 66
-            },
-            "start": {
-              "column": 18,
-              "line": 63
-            }
-          }
-        },
-        {
-          "id": "6",
-          "mutatorName": "ArrowFunction",
-          "replacement": "() => undefined",
-          "statusReason": "expected 'Error: TypeError: Cannot read propert…' to be 'User John Doe' // Object.is equality",
-          "status": "Killed",
-          "static": true,
-          "testsCompleted": 1,
-          "killedBy": [
-            "1"
-          ],
-          "coveredBy": [
-            "1"
-          ],
-          "location": {
-            "end": {
-              "column": 54,
-              "line": 65
-            },
-            "start": {
-              "column": 12,
-              "line": 64
-            }
-          }
-        },
-        {
-          "id": "19",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "expected 'Error: Error' to be 'Error: Error: Connection failed ETIME…' // Object.is equality",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "1"
-          ],
-          "coveredBy": [
-            "1"
-          ],
-          "location": {
-            "end": {
-              "column": 54,
-              "line": 115
-            },
-            "start": {
-              "column": 25,
-              "line": 115
             }
           }
         },
@@ -654,63 +704,13 @@
               "line": 173
             },
             "start": {
-              "column": 73,
+              "column": 66,
               "line": 171
-            }
-          }
-        },
-        {
-          "id": "32",
-          "mutatorName": "StringLiteral",
-          "replacement": "``",
-          "statusReason": "expected [Function] to throw error including 'Exit function was called with code 1' but got ''",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "2"
-          ],
-          "coveredBy": [
-            "2"
-          ],
-          "location": {
-            "end": {
-              "column": 65,
-              "line": 172
-            },
-            "start": {
-              "column": 21,
-              "line": 172
-            }
-          }
-        },
-        {
-          "id": "18",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "Test timed out in 5000ms.\nIf this is a long-running test, pass a timeout value as the last argument or configure it globally with \"testTimeout\".",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "1"
-          ],
-          "coveredBy": [
-            "1"
-          ],
-          "location": {
-            "end": {
-              "column": 6,
-              "line": 116
-            },
-            "start": {
-              "column": 33,
-              "line": 114
             }
           }
         }
       ],
-      "source": "/* eslint-disable @typescript-eslint/naming-convention */\n\n// Date related types and functions\n\n/**\n * Type for a function that returns a Date.\n */\nexport type DateFunction = () => Date\n\n/**\n * Returns a DateFunction that returns the current date.\n * Can for example be used to get the current date when logging.\n * @returns DateFunction function returning the current data\n */\nexport function nowDateFunction(): DateFunction {\n    return (): Date => new Date()\n}\n\n/**\n * Returns a DateFunction that returns a fixed date.\n * Can for example be used to get a fixed date for testing.\n * @param dateString fixed date string\n * @returns DateFunction function returning the fixed date\n */\nexport function fixedDateFunction(dateString: string): DateFunction {\n    return (): Date => new Date(dateString)\n}\n\n/**\n * Test date\n * '1001-01-01T00:00:00.000Z'\n * as ISO Date string. Can be used to ease and unify testing.\n */\nexport const testDateString = '1001-01-01T00:00:00.000Z'\n\n/**\n * DateFunction that returns the test date.\n * Can for example be used to always get the date when testing.\n */\nexport const testDateFunction: DateFunction = fixedDateFunction(testDateString)\n\n// Fetch related types and functions\n\n/**\n * Type for a fetch function that given an input (url, request, etc.) and request init\n * returns a Promise<Response>\n */\nexport type FetchFunction = (\n    input: string | URL | Request,\n    init?: RequestInit,\n) => Promise<Response>\n\n/**\n * Returns a FetchFunction that always returns a fixed response.\n * Can for example be used to get a fixed Response for testing.\n * @param bodyInit body for the response\n * @param init response init\n * @returns FetchFunction function returning the fixed Response\n */\nexport function fixedResponseFetchFunction(\n    bodyInit?: BodyInit,\n    init?: ResponseInit,\n): FetchFunction {\n    return (): Promise<Response> =>\n        Promise.resolve(new Response(bodyInit, init))\n}\n\n/**\n * FetchFunction that returns a fixed Response with and empty body and status 400 (Bad Request).\n */\nexport const badRequestFetchFunction = fixedResponseFetchFunction(undefined, {\n    status: 400,\n})\n\n/**\n * FetchFunction that returns a fixed Response with and empty body and status 404 (Not Found).\n */\nexport const notFoundFetchFunction: FetchFunction = fixedResponseFetchFunction(\n    undefined,\n    { status: 404 },\n)\n\n/**\n * FetchFunction that returns a fixed Response with and empty body and status 500 (Internal Server Error).\n */\nexport const internalServerErrorFetchFunction = fixedResponseFetchFunction(\n    undefined,\n    { status: 500 },\n)\n\n/**\n * FetchFunction that returns a fixed Response with broken JSON (missing bracket)\n */\nexport const brokenJSONFetchFunction: FetchFunction =\n    fixedResponseFetchFunction('{\"data\": {\"message\": \"Missing bracket\"}', {\n        headers: { 'Content-Type': 'application/json' },\n        status: 200,\n    })\n\n/**\n * FetchFunction that returns a fixed Response with an unknown\n * Content-Type ('application/unknown')\n */\nexport const unknownContentTypeFetchFunction: FetchFunction =\n    fixedResponseFetchFunction(undefined, {\n        headers: { 'Content-Type': 'application/unknown' },\n        status: 200,\n    })\n\n/**\n * FetchFunction that returns a fixed Response that throws a Timeout error.\n */\nexport const timeoutFetchFunction: FetchFunction = (): Promise<Response> =>\n    new Promise<Response>(() => {\n        throw new Error('Connection failed ETIMEDOUT')\n    })\n\n/**\n * FetchFunction that returns a fixed Response with an AggregateError.\n */\nexport const aggregateErrorFetchFunction = fixedResponseFetchFunction(\n    '{\"errors\":[{\"message\":\"aaa The first error!, The second error!\", \"originalError\": {\"errors\": [{\"message\":\"The first error!\"}, {\"message\":\"The second error!\"}  ] }  }]}',\n    {\n        headers: { 'Content-Type': 'application/json' },\n        status: 200,\n    },\n)\n\n/**\n * FetchFunction that returns a fixed Response that GraphQL introspection is disabled.\n */\nexport const graphQLIntrospectionDisabledFetchFunction =\n    fixedResponseFetchFunction(\n        '{\"errors\": [ { \"message\": \"Introspection is disabled\"}],\"data\": null}',\n        { status: 200 },\n    )\n\n/**\n * FetchFunction that returns a fixed Response with an invalid GraphQL schema.\n */\nexport const graphQLInvalidSchemaFetchFunction = fixedResponseFetchFunction(\n    '{\"data\": {\"__schema\":\"NotAGraphQLSchema\", ' +\n        '\"_service\": {\"sdl\":\"NotAGraphQLSchema\"}}}',\n    { status: 200 },\n)\n\n/**\n * FetchFunction that returns a fixed Response with an invalid GraphQL body.\n */\nexport const graphQLInvalidBodyFetchFunction = fixedResponseFetchFunction(\n    '{\"message\": \"I am not GraphQL!\"}',\n    { status: 200 },\n)\n\n// Exit function related types and functions\n\n/**\n * Type for a function that given an exit does not return anything.\n * @param {number} code The exit code to use\n * @returns {never} Does not return anything, may e.g. exit the process or throw an error\n */\nexport type ExitFunction = (code: number) => never\n\n/**\n * Exit function that does not exit the process but throws an error instead\n * Can be used in testing to avoid the tests exiting the application.\n * @param {number} code The exit code to be thrown in the error\n * @returns {never} Does not return anything but throws an error with the message\n * \"Exit function was called with code CODE\" where CODE is the given code.\n */\nexport const doNotExitFunction: ExitFunction = (code: number): never => {\n    throw new Error(`Exit function was called with code ${code}`)\n}\n\n// Timeout function related types and functions\n\n/**\n * Type for a function that given a TimerHandler, optional timeout and arguments returns the timeout ID as number.\n * @param {TimerHandler} handler The TimerHandler to be called (i.e. in most cases a callback function)\n * @param {number} timeout The timeout in milliseconds\n * @param {any[]} timeoutArguments The arguments to be passed to the handler\n * @returns {number} The timeout ID as number\n */\nexport type TimeoutFunction = (\n    handler: TimerHandler,\n    timeout?: number,\n    // eslint-disable-next-line @typescript-eslint/no-explicit-any\n    ...timeoutArguments: any[]\n) => number\n\n/**\n * TimeoutFunction that does not call the callback function but returns a fixed timeout ID 1.\n * Can be used in testing to avoid the tests waiting for the timeout to finish.\n * @returns {number} Fixed timeout ID 1\n */\nexport const noCallbackTimeoutFunction: TimeoutFunction = (): number => 1\n"
+      "source": "/* eslint-disable @typescript-eslint/naming-convention */\n\n// Date related types and functions\n\n/**\n * Type for a function that returns a Date.\n */\ntype DateFunction = () => Date\n\n/**\n * Returns a DateFunction that returns the current date.\n * Can for example be used to get the current date when logging.\n * @returns DateFunction function returning the current data\n */\nfunction nowDateFunction(): DateFunction {\n    return (): Date => new Date()\n}\n\n/**\n * Returns a DateFunction that returns a fixed date.\n * Can for example be used to get a fixed date for testing.\n * @param dateString fixed date string\n * @returns DateFunction function returning the fixed date\n */\nfunction fixedDateFunction(dateString: string): DateFunction {\n    return (): Date => new Date(dateString)\n}\n\n/**\n * Test date\n * '1001-01-01T00:00:00.000Z'\n * as ISO Date string. Can be used to ease and unify testing.\n */\nconst testDateString = '1001-01-01T00:00:00.000Z'\n\n/**\n * DateFunction that returns the test date.\n * Can for example be used to always get the date when testing.\n */\nconst testDateFunction: DateFunction = fixedDateFunction(testDateString)\n\n// Fetch related types and functions\n\n/**\n * Type for a fetch function that given an input (url, request, etc.) and request init\n * returns a Promise<Response>\n */\ntype FetchFunction = (\n    input: string | URL | Request,\n    init?: RequestInit,\n) => Promise<Response>\n\n/**\n * Returns a FetchFunction that always returns a fixed response.\n * Can for example be used to get a fixed Response for testing.\n * @param bodyInit body for the response\n * @param init response init\n * @returns FetchFunction function returning the fixed Response\n */\nfunction fixedResponseFetchFunction(\n    bodyInit?: BodyInit,\n    init?: ResponseInit,\n): FetchFunction {\n    return (): Promise<Response> =>\n        Promise.resolve(new Response(bodyInit, init))\n}\n\n/**\n * FetchFunction that returns a fixed Response with and empty body and status 400 (Bad Request).\n */\nconst badRequestFetchFunction = fixedResponseFetchFunction(undefined, {\n    status: 400,\n})\n\n/**\n * FetchFunction that returns a fixed Response with and empty body and status 404 (Not Found).\n */\nconst notFoundFetchFunction: FetchFunction = fixedResponseFetchFunction(\n    undefined,\n    { status: 404 },\n)\n\n/**\n * FetchFunction that returns a fixed Response with and empty body and status 500 (Internal Server Error).\n */\nconst internalServerErrorFetchFunction = fixedResponseFetchFunction(\n    undefined,\n    { status: 500 },\n)\n\n/**\n * FetchFunction that returns a fixed Response with broken JSON (missing bracket)\n */\nconst brokenJSONFetchFunction: FetchFunction =\n    fixedResponseFetchFunction('{\"data\": {\"message\": \"Missing bracket\"}', {\n        headers: { 'Content-Type': 'application/json' },\n        status: 200,\n    })\n\n/**\n * FetchFunction that returns a fixed Response with an unknown\n * Content-Type ('application/unknown')\n */\nconst unknownContentTypeFetchFunction: FetchFunction =\n    fixedResponseFetchFunction(undefined, {\n        headers: { 'Content-Type': 'application/unknown' },\n        status: 200,\n    })\n\n/**\n * FetchFunction that returns a fixed Response that throws a Timeout error.\n */\nconst timeoutFetchFunction: FetchFunction = (): Promise<Response> =>\n    new Promise<Response>(() => {\n        throw new Error('Connection failed ETIMEDOUT')\n    })\n\n/**\n * FetchFunction that returns a fixed Response with an AggregateError.\n */\nconst aggregateErrorFetchFunction = fixedResponseFetchFunction(\n    '{\"errors\":[{\"message\":\"aaa The first error!, The second error!\", \"originalError\": {\"errors\": [{\"message\":\"The first error!\"}, {\"message\":\"The second error!\"}  ] }  }]}',\n    {\n        headers: { 'Content-Type': 'application/json' },\n        status: 200,\n    },\n)\n\n/**\n * FetchFunction that returns a fixed Response that GraphQL introspection is disabled.\n */\nconst graphQLIntrospectionDisabledFetchFunction =\n    fixedResponseFetchFunction(\n        '{\"errors\": [ { \"message\": \"Introspection is disabled\"}],\"data\": null}',\n        { status: 200 },\n    )\n\n/**\n * FetchFunction that returns a fixed Response with an invalid GraphQL schema.\n */\nconst graphQLInvalidSchemaFetchFunction = fixedResponseFetchFunction(\n    '{\"data\": {\"__schema\":\"NotAGraphQLSchema\", ' +\n        '\"_service\": {\"sdl\":\"NotAGraphQLSchema\"}}}',\n    { status: 200 },\n)\n\n/**\n * FetchFunction that returns a fixed Response with an invalid GraphQL body.\n */\nconst graphQLInvalidBodyFetchFunction = fixedResponseFetchFunction(\n    '{\"message\": \"I am not GraphQL!\"}',\n    { status: 200 },\n)\n\n// Exit function related types and functions\n\n/**\n * Type for a function that given an exit does not return anything.\n * @param {number} code The exit code to use\n * @returns {never} Does not return anything, may e.g. exit the process or throw an error\n */\ntype ExitFunction = (code: number) => never\n\n/**\n * Exit function that does not exit the process but throws an error instead\n * Can be used in testing to avoid the tests exiting the application.\n * @param {number} code The exit code to be thrown in the error\n * @returns {never} Does not return anything but throws an error with the message\n * \"Exit function was called with code CODE\" where CODE is the given code.\n */\nconst doNotExitFunction: ExitFunction = (code: number): never => {\n    throw new Error(`Exit function was called with code ${code}`)\n}\n\n// Timeout function related types and functions\n\n/**\n * Type for a function that given a TimerHandler, optional timeout and arguments returns the timeout ID as number.\n * @param {TimerHandler} handler The TimerHandler to be called (i.e. in most cases a callback function)\n * @param {number} timeout The timeout in milliseconds\n * @param {any[]} timeoutArguments The arguments to be passed to the handler\n * @returns {number} The timeout ID as number\n */\ntype TimeoutFunction = (\n    handler: TimerHandler,\n    timeout?: number,\n    // eslint-disable-next-line @typescript-eslint/no-explicit-any\n    ...timeoutArguments: any[]\n) => number\n\n/**\n * TimeoutFunction that does not call the callback function but returns a fixed timeout ID 1.\n * Can be used in testing to avoid the tests waiting for the timeout to finish.\n * @returns {number} Fixed timeout ID 1\n */\nconst noCallbackTimeoutFunction: TimeoutFunction = (): number => 1\n\nexport {\n    DateFunction,\n    nowDateFunction,\n    fixedDateFunction,\n    testDateString,\n    testDateFunction,\n    FetchFunction,\n    fixedResponseFetchFunction,\n    badRequestFetchFunction,\n    notFoundFetchFunction,\n    internalServerErrorFetchFunction,\n    brokenJSONFetchFunction,\n    unknownContentTypeFetchFunction,\n    timeoutFetchFunction,\n    aggregateErrorFetchFunction,\n    graphQLIntrospectionDisabledFetchFunction,\n    graphQLInvalidSchemaFetchFunction,\n    graphQLInvalidBodyFetchFunction,\n    ExitFunction,\n    doNotExitFunction,\n    TimeoutFunction,\n    noCallbackTimeoutFunction,\n}\n"
     }
   },
   "schemaVersion": "1.0",
@@ -842,13 +842,13 @@
   },
   "framework": {
     "name": "StrykerJS",
-    "version": "8.7.0",
+    "version": "8.7.1",
     "branding": {
       "homepageUrl": "https://stryker-mutator.io",
       "imageUrl": "data:image/svg+xml;utf8,%3Csvg viewBox='0 0 1458 1458' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linejoin='round' stroke-miterlimit='2'%3E%3Cpath fill='none' d='M0 0h1458v1458H0z'/%3E%3CclipPath id='a'%3E%3Cpath d='M0 0h1458v1458H0z'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M1458 729c0 402.655-326.345 729-729 729S0 1131.655 0 729C0 326.445 326.345 0 729 0s729 326.345 729 729' fill='%23e74c3c' fill-rule='nonzero'/%3E%3Cpath d='M778.349 1456.15L576.6 1254.401l233-105 85-78.668v-64.332l-257-257-44-187-50-208 251.806-82.793L1076.6 389.401l380.14 379.15c-19.681 367.728-311.914 663.049-678.391 687.599z' fill-opacity='.3'/%3E%3Cpath d='M753.4 329.503c41.79 0 74.579 7.83 97.925 25.444 23.571 18.015 41.69 43.956 55.167 77.097l11.662 28.679 165.733-58.183-14.137-32.13c-26.688-60.655-64.896-108.61-114.191-144.011-49.329-35.423-117.458-54.302-204.859-54.302-50.78 0-95.646 7.376-134.767 21.542-40.093 14.671-74.09 34.79-102.239 60.259-28.84 26.207-50.646 57.06-65.496 92.701-14.718 35.052-22.101 72.538-22.101 112.401 0 72.536 20.667 133.294 61.165 182.704 38.624 47.255 98.346 88.037 179.861 121.291 42.257 17.475 78.715 33.125 109.227 46.994 27.193 12.361 49.294 26.124 66.157 41.751 15.309 14.186 26.497 30.584 33.63 49.258 7.721 20.214 11.16 45.69 11.16 76.402 0 28.021-4.251 51.787-13.591 71.219-8.832 18.374-20.171 33.178-34.523 44.219-14.787 11.374-31.193 19.591-49.393 24.466-19.68 5.359-39.14 7.993-58.69 7.993-29.359 0-54.387-3.407-75.182-10.747-20.112-7.013-37.144-16.144-51.259-27.486-13.618-11.009-24.971-23.766-33.744-38.279-9.64-15.8-17.272-31.924-23.032-48.408l-10.965-31.376-161.669 60.585 10.734 30.124c10.191 28.601 24.197 56.228 42.059 82.748 18.208 27.144 41.322 51.369 69.525 72.745 27.695 21.075 60.904 38.218 99.481 51.041 37.777 12.664 82.004 19.159 132.552 19.159 49.998 0 95.818-8.321 137.611-24.622 42.228-16.471 78.436-38.992 108.835-67.291 30.719-28.597 54.631-62.103 71.834-100.642 17.263-38.56 25.923-79.392 25.923-122.248 0-54.339-8.368-100.37-24.208-138.32-16.29-38.759-38.252-71.661-65.948-98.797-26.965-26.418-58.269-48.835-93.858-67.175-33.655-17.241-69.196-33.11-106.593-47.533-35.934-13.429-65.822-26.601-89.948-39.525-22.153-11.868-40.009-24.21-53.547-37.309-11.429-11.13-19.83-23.678-24.718-37.664-5.413-15.49-7.98-33.423-7.98-53.577 0-40.883 11.293-71.522 37.086-90.539 28.443-20.825 64.985-30.658 109.311-30.658z' fill='%23f1c40f' fill-rule='nonzero'/%3E%3Cpath d='M720 0h18v113h-18zM1458 738v-18h-113v18h113zM720 1345h18v113h-18zM113 738v-18H0v18h113z'/%3E%3C/g%3E%3C/svg%3E"
     },
     "dependencies": {
-      "typescript": "5.7.2"
+      "typescript": "5.8.3"
     }
   }
 }
