@@ -2,10 +2,7 @@ import {
     aggregateErrorFetchFunction,
     badRequestFetchFunction,
     brokenJSONFetchFunction,
-    DateFunction,
     doNotExitFunction,
-    ExitFunction,
-    FetchFunction,
     fixedDateFunction,
     fixedResponseFetchFunction,
     graphQLIntrospectionDisabledFetchFunction,
@@ -18,8 +15,14 @@ import {
     testDateFunction,
     testDateString,
     timeoutFetchFunction,
-    TimeoutFunction,
     unknownContentTypeFetchFunction,
+} from '@/index'
+// eslint-disable-next-line @typescript-eslint/no-duplicate-imports
+import type {
+    DateFunction,
+    ExitFunction,
+    FetchFunction,
+    TimeoutFunction,
 } from '@/index'
 import { expect, test } from 'vitest'
 
