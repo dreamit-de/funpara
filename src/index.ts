@@ -196,10 +196,6 @@ type TimeoutFunction = (
 const noCallbackTimeoutFunction: TimeoutFunction = (): number => 1
 
 export {
-    DateFunction,
-    ExitFunction,
-    FetchFunction,
-    TimeoutFunction,
     aggregateErrorFetchFunction,
     badRequestFetchFunction,
     brokenJSONFetchFunction,
@@ -218,3 +214,5 @@ export {
     timeoutFetchFunction,
     unknownContentTypeFetchFunction,
 }
+
+export type { DateFunction, ExitFunction, FetchFunction, TimeoutFunction }
