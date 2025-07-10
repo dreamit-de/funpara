@@ -10,10 +10,10 @@ Please follow the guideline below to report any vulnerability.
 Following list contains the current and supported versions.
 Please consider using only supported versions.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.3.x   | :x: |
-| < 1.3   | :x:                |
+| Version | Supported |
+| ------- | --------- |
+| 1.3.x   | :x:       |
+| < 1.3   | :x:       |
 
 ## Reporting a Vulnerability
 

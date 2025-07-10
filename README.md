@@ -2,7 +2,7 @@
 
 Function parameter library to ease development and testing. The library provides Date, Exit, Fetch and Timeout related functions that can be used without complicated spy/mock setups so that an application can easily be tested with function parameters.
 
-**Deprecated**: This library will no longer be maintained. Use ***@sgohlke/funpara*** instead!
+**Deprecated**: This library will no longer be maintained. Use **_@sgohlke/funpara_** instead!
 
 ## Installation
 
